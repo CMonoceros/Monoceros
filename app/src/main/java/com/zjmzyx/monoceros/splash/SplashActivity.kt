@@ -1,4 +1,4 @@
-package com.zjmzyx.monoceros.module.splash
+package com.zjmzyx.monoceros.splash
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle

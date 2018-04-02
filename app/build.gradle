@@ -60,7 +60,6 @@ android {
 
     buildTypes {
         release {
-            // 不显示Log
             buildConfigField "boolean", "LOG_DEBUG", "false"
             minifyEnabled true
             //Zipalign优化
@@ -75,7 +74,6 @@ android {
         }
 
         debug {
-            // 显示Log
             buildConfigField "boolean", "LOG_DEBUG", "true"
             versionNameSuffix "-debug"
             minifyEnabled false
