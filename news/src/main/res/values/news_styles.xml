@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="news_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/news_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/news_colorPrimaryDark</item>
+        <item name="colorAccent">@color/news_colorAccent</item>
+    </style>
+
+</resources>

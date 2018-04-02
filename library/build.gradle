@@ -1,0 +1,126 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (isDebug.toBoolean()) {
+                java.srcDirs += "src/debug/java/"
+            } else {
+                java.srcDirs += "src/release/java/"
+            }
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    resourcePrefix "library_"
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //数据库
+    //room
+    compile "android.arch.persistence.room:runtime:$room_version"
+    compile "android.arch.persistence.room:rxjava2:$room_version"
+
+    //注入依赖库
+    //dagger2
+    compile "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //数据绑定库
+    //databinding
+    kapt "com.android.databinding:compiler:$gradle_version"
+
+    //打包库
+    //walle多渠道打包
+    compile "com.meituan.android.walle:library:$walle_version"
+    //多dex
+    compile "com.android.support:multidex:$multidex_version"
+
+    //日志管理库
+    //orhanobut
+    compile "com.orhanobut:logger:$orhanobut_logger_version"
+
+    //网络请求库
+    //okhttp3
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+    compile "com.squareup.okhttp3:okhttp:$okhttp3_version"
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    //retrofit2
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    //gson转换
+    compile "com.google.code.gson:gson:$gson_version"
+
+    //多线程管理库
+    //rxjava2
+    compile "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    compile "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+    //语言库
+    //kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //数据总线库
+    //eventbus
+    compile "org.greenrobot:eventbus:$eventbus_version"
+
+    //控件
+    //android官方控件
+    compile "com.android.support:appcompat-v7:$android_support_version"
+    compile "com.android.support:support-v4:$android_support_version"
+    compile "com.android.support:recyclerview-v7:$android_support_version"
+    compile "com.android.support:design:$android_support_version"
+    //fresco图片加载控件
+    compile "com.facebook.fresco:fresco:$fresco_version"
+    compile "com.facebook.fresco:animated-gif:$fresco_version"
+
+    //测试库
+    //Espresso
+    compile "com.android.support.test.espresso:espresso-idling-resource:$espresso_version"
+    androidTestCompile "com.android.support.test.espresso:espresso-core:$espresso_version"
+    androidTestCompile "com.android.support.test.espresso:espresso-contrib:$espresso_version"
+    androidTestCompile "com.android.support.test.espresso:espresso-idling-resource:$espresso_version"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:$espresso_version"
+    //Junit
+    testCompile "junit:junit:$junit_version"
+    //Android官方测试规则
+    androidTestCompile "com.android.support.test:runner:$android_test_version"
+    androidTestCompile "com.android.support.test:rules:$android_test_version"
+    //UIAutoMator
+    androidTestCompile "com.android.support.test.uiautomator:uiautomator-v18:$uiautomator_version"
+
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
+
+    provided "org.glassfish:javax.annotation:$javax_annotation_version"
+}
