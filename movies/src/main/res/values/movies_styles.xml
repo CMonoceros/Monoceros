@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="movies_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/movies_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/movies_colorPrimaryDark</item>
+        <item name="colorAccent">@color/movies_colorAccent</item>
+    </style>
+
+</resources>

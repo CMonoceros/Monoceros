@@ -3,12 +3,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/news_ic_launcher"
-        android:label="@string/news_app_name"
+        android:icon="@mipmap/movies_ic_launcher"
+        android:label="@string/movies_app_name"
         android:largeHeap="true"
-        android:roundIcon="@mipmap/news_ic_launcher_round"
+        android:roundIcon="@mipmap/movies_ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/news_AppTheme">
+        android:theme="@style/movies_AppTheme">
 
     </application>
 </manifest>

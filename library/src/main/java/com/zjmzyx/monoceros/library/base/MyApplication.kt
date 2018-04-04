@@ -79,7 +79,7 @@ class MyApplication : MultiDexApplication() {
                     // (Optional) Hides internal method calls up to offset. Default 5
                     .methodOffset(0)
                     // (Optional) Global tag for every log. Default PRETTY_LOGGER
-                    .tag("JoJoToo-Debug")
+                    .tag("Monoceros-Debug")
                     .build()
         } else {
             formatStrategy = PrettyFormatStrategy.newBuilder()
@@ -90,7 +90,7 @@ class MyApplication : MultiDexApplication() {
                     // (Optional) Hides internal method calls up to offset. Default 5
                     .methodOffset(0)
                     // (Optional) Global tag for every log. Default PRETTY_LOGGER
-                    .tag("JoJoToo-Release")
+                    .tag("Monoceros-Release")
                     .build()
 
         }

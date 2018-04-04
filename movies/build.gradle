@@ -46,7 +46,7 @@ android {
         enabled = true
     }
 
-    resourcePrefix "news_"
+    resourcePrefix "movies_"
 }
 
 dependencies {

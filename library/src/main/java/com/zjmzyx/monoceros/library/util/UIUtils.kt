@@ -104,9 +104,6 @@ object UIUtils {
             val uri = Uri.parse(url)
             val layoutParams = view.layoutParams
             val request = ImageRequestBuilder.newBuilderWithSource(uri)
-                    //图片渐近式加载
-                    .setProgressiveRenderingEnabled(true)
-                    //解码前修改内存中图片的大小，与downsampling结合使用可处理所有类型图片，否则只能处理jpg
                     .setResizeOptions(ResizeOptions(layoutParams.width, layoutParams.height))
                     .build()
             val controller = Fresco.newDraweeControllerBuilder()

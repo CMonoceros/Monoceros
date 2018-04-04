@@ -13,9 +13,9 @@ import android.view.ViewGroup
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.request.ImageRequestBuilder
 import com.zjmzyx.monoceros.library.R
-import com.zjmzyx.monoceros.library.base.model.service.RetrofitService
 import com.zjmzyx.monoceros.library.databinding.LibraryViewLoadingBinding
 import com.zjmzyx.monoceros.library.util.BaseUtil
+import com.zjmzyx.monoceros.library.util.ServiceUtil
 
 import io.reactivex.Observable
 import io.reactivex.Observer
@@ -115,7 +115,7 @@ abstract class BaseListAdapter<T>(var data: List<T>,
 
                     override fun onError(e: Throwable) {
                         e.printStackTrace()
-                        RetrofitService.reportCrash(e.message)
+                        ServiceUtil.reportCrash(e.message)
                     }
 
                     override fun onComplete() {

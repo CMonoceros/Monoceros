@@ -114,12 +114,15 @@ repositories {
 
 dependencies {
     if (!isDebug.toBoolean()) {
-        compile project(':news')
+        compile project(':movies')
     } else {
         compile project(':library')
     }
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //底部导航栏控件
+    compile "com.ashokvarma.android:bottom-navigation-bar:$bottom_navigation_bar_version"
 
     kapt "com.android.databinding:compiler:$gradle_version"
 

@@ -19,5 +19,8 @@
             </intent-filter>
         </activity>
 
+        <!--主页模块-->
+        <activity android:name=".module.home.HomeActivity"/>
+
     </application>
 </manifest>

@@ -1,8 +1,8 @@
 package com.zjmzyx.monoceros.library.base.ui
 
 
-import com.zjmzyx.monoceros.library.base.model.service.RetrofitService
 import com.zjmzyx.monoceros.library.test.EspressoIdlingManager
+import com.zjmzyx.monoceros.library.util.ServiceUtil
 
 import io.reactivex.Observer
 import io.reactivex.disposables.CompositeDisposable
@@ -35,7 +35,7 @@ abstract class BaseObserver<T> : Observer<T> {
 
     override fun onError(throwable: Throwable) {
         throwable.printStackTrace()
-        RetrofitService.onError(throwable.message)
+        ServiceUtil.onError(throwable.message)
     }
 
     override fun onComplete() {
