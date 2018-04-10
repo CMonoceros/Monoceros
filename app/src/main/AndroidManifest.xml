@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <!--splash模块-->
-        <activity android:name="com.zjmzyx.monoceros.module.splash.SplashActivity">
+        <activity android:name="com.zjmzyx.monoceros.module.splash.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -20,7 +20,7 @@
         </activity>
 
         <!--主页模块-->
-        <activity android:name=".module.home.HomeActivity"/>
+        <activity android:name=".module.home.activity.HomeActivity"/>
 
     </application>
 </manifest>

@@ -214,7 +214,7 @@ abstract class BaseListAdapter<T>(var data: List<T>,
                 .setUri(imageRequest.sourceUri)
                 .setAutoPlayAnimations(true)
                 .build()
-        holder.binding.librarySdvLoading.controller = controller
+        holder.binding!!.librarySdvLoading.controller = controller
     }
 
     /**
@@ -227,7 +227,7 @@ abstract class BaseListAdapter<T>(var data: List<T>,
     class LoadingHolder(view: View)
         : RecyclerView.ViewHolder(view) {
 
-        var binding: LibraryViewLoadingBinding = DataBindingUtil.bind(view)
+        var binding: LibraryViewLoadingBinding? = DataBindingUtil.bind(view)
 
     }
 

@@ -86,9 +86,18 @@ android {
     }
 
     sourceSets {
-        main {
+        debug {
             manifest.srcFile 'src/main/AndroidManifest.xml'
-            if (isDebug.toBoolean()) {
+            if (isComponent.toBoolean()) {
+                java.srcDirs += "src/debug/java/"
+            } else {
+                java.srcDirs += "src/release/java/"
+            }
+        }
+
+        release {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            if (isComponent.toBoolean()) {
                 java.srcDirs += "src/debug/java/"
             } else {
                 java.srcDirs += "src/release/java/"
@@ -113,16 +122,13 @@ repositories {
 }
 
 dependencies {
-    if (!isDebug.toBoolean()) {
-        compile project(':movies')
-    } else {
+    if (isComponent.toBoolean()) {
         compile project(':library')
+    } else {
+        compile project(':movies')
     }
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    //底部导航栏控件
-    compile "com.ashokvarma.android:bottom-navigation-bar:$bottom_navigation_bar_version"
 
     kapt "com.android.databinding:compiler:$gradle_version"
 

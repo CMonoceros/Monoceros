@@ -1,4 +1,4 @@
-package com.zjmzyx.monoceros.inject.module
+package com.zjmzyx.monoceros.base.inject.module
 
 import android.app.Activity
 import android.content.Context

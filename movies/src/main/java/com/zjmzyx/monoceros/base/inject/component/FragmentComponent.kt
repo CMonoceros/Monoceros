@@ -1,12 +1,13 @@
-package com.zjmzyx.monoceros.inject.component
+package com.zjmzyx.monoceros.base.inject.component
 
 import android.app.Activity
 import android.content.Context
 import com.zjmzyx.monoceros.library.base.inject.component.ApplicationComponent
 
-import com.zjmzyx.monoceros.inject.module.FragmentModule
+import com.zjmzyx.monoceros.base.inject.module.FragmentModule
 import com.zjmzyx.monoceros.library.base.inject.scope.PerContext
 import com.zjmzyx.monoceros.library.base.inject.scope.PerFragment
+import com.zjmzyx.monoceros.module.home.fragment.MoviesListFragment
 
 import dagger.Component
 
@@ -27,4 +28,6 @@ interface FragmentComponent {
     val applicationContext: Context?
 
     val activity: Activity?
+
+    fun inject(moviesListFragment: MoviesListFragment)
 }

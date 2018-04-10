@@ -1,4 +1,4 @@
-package com.zjmzyx.monoceros.module.splash
+package com.zjmzyx.monoceros.module.splash.activity
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -7,31 +7,28 @@ import android.view.View
 import android.view.WindowManager
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import com.orhanobut.logger.Logger
 import com.zjmzyx.monoceros.R
 
-import com.zjmzyx.monoceros.databinding.ActivitySplashBinding
+import com.zjmzyx.monoceros.databinding.SplashActivityBinding
 import com.zjmzyx.monoceros.library.base.MyApplication
 import com.zjmzyx.monoceros.library.base.ui.activity.BaseActivity
 import com.zjmzyx.monoceros.library.util.BaseUtil
 import com.zjmzyx.monoceros.library.util.UIUtils
-import com.zjmzyx.monoceros.module.home.HomeActivity
-
-import io.reactivex.disposables.CompositeDisposable
+import com.zjmzyx.monoceros.module.home.activity.HomeActivity
 
 /**
  * @author zjm
  */
 class SplashActivity : BaseActivity() {
 
-    private var binding: ActivitySplashBinding? = null
+    private var binding: SplashActivityBinding? = null
 
     override fun errorViewOnClick() {
 
     }
 
     override fun initView(savedInstanceState: Bundle?): View {
-        val view = View.inflate(this, R.layout.activity_splash, null)
+        val view = View.inflate(this, R.layout.splash_activity, null)
         binding = DataBindingUtil.bind(view)
         initCover()
         initAnimation()
@@ -39,7 +36,6 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun initCover() {
-        Logger.e("res://" + R.drawable.splash_cover)
         UIUtils.setSimpleDraweeView("res://" + BaseUtil.packageName + "/"
                 + R.drawable.splash_cover, binding!!.sdvItem,
                 UIUtils.screenWidth, UIUtils.screenHeight)
@@ -57,7 +53,8 @@ class SplashActivity : BaseActivity() {
             }
 
             override fun onAnimationEnd(p0: Animation?) {
-                var intent=Intent(MyApplication.context,HomeActivity::class.java)
+                val intent = Intent(MyApplication.context, HomeActivity::class.java)
+                MyApplication.context!!.startActivity(intent)
             }
 
         })

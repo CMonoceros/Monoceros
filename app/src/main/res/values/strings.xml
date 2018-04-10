@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Monoceros</string>
+
+    <string name="menu_home_main_movie">电影</string>
 </resources>

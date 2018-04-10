@@ -1,4 +1,4 @@
-if (isDebug.toBoolean()) {
+if (isComponent.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -31,14 +31,19 @@ android {
 
     sourceSets {
         main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            if (isDebug.toBoolean()) {
+            println '==========================================================='
+            println isComponent.toBoolean()
+            println java.srcDirs
+            println manifest.srcFile
+            if (isComponent.toBoolean()) {
                 manifest.srcFile 'src/debug/AndroidManifest.xml'
                 java.srcDirs += "src/debug/java/"
             } else {
                 manifest.srcFile 'src/release/AndroidManifest.xml'
                 java.srcDirs += "src/release/java/"
             }
+            println java.srcDirs
+            println manifest.srcFile
         }
     }
 

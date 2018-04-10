@@ -7,6 +7,8 @@ package com.zjmzyx.monoceros.cons;
  */
 public class Constants {
 
+    //Debug
+
     public static String TIME_HOST = "https://api-m.mtime.cn/";
 
     //缓存期限5分钟
