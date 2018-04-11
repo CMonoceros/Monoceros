@@ -1,10 +1,10 @@
-package com.zjmzyx.monoceros.base.inject.component
+package com.zjmzyx.monoceros.movies.base.inject.component
 
 import android.app.Activity
 import android.content.Context
 import com.zjmzyx.monoceros.library.base.inject.component.ApplicationComponent
 
-import com.zjmzyx.monoceros.base.inject.module.ActivityModule
+import com.zjmzyx.monoceros.movies.base.inject.module.ActivityModule
 import com.zjmzyx.monoceros.library.base.inject.scope.PerActivity
 import com.zjmzyx.monoceros.library.base.inject.scope.PerContext
 
