@@ -1,8 +1,7 @@
-package com.zjmzyx.monoceros.module.home.presenter
+package com.zjmzyx.monoceros.movies.module.home.presenter
 
-import com.zjmzyx.monoceros.module.home.contract.MoviesListContract
+import com.zjmzyx.monoceros.movies.module.home.contract.MoviesListContract
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 /**

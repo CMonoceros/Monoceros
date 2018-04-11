@@ -9,7 +9,7 @@ public class Constants {
 
     //Release
 
-    public static String HOST = "";
+    public static String TIME_HOST = "https://api-m.mtime.cn/";
 
     //缓存期限5分钟
     public static long TIMEOUT = 5 * 60 * 1000;

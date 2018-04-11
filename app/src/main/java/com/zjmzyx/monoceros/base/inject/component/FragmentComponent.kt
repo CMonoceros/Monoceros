@@ -2,9 +2,9 @@ package com.zjmzyx.monoceros.base.inject.component
 
 import android.app.Activity
 import android.content.Context
+import com.zjmzyx.monoceros.base.inject.module.FragmentModule
 import com.zjmzyx.monoceros.library.base.inject.component.ApplicationComponent
 
-import com.zjmzyx.monoceros.base.inject.module.FragmentModule
 import com.zjmzyx.monoceros.library.base.inject.scope.PerContext
 import com.zjmzyx.monoceros.library.base.inject.scope.PerFragment
 

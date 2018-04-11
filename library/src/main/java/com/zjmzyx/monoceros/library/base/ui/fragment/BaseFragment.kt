@@ -9,12 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.drawee.interfaces.DraweeController
 import com.facebook.drawee.view.SimpleDraweeView
 import com.facebook.imagepipeline.request.ImageRequest
 import com.facebook.imagepipeline.request.ImageRequestBuilder
+import com.orhanobut.logger.Logger
 import com.squareup.leakcanary.RefWatcher
 import com.zjmzyx.monoceros.library.R
 import com.zjmzyx.monoceros.library.base.MyApplication
@@ -73,7 +75,8 @@ abstract class BaseFragment : Fragment() {
     }
 
     private fun initFrameLayout() {
-        emptyView = View.inflate(MyApplication.context, R.layout.library_base_activity_empty, null)
+
+        emptyView = activity!!.layoutInflater.inflate(R.layout.library_base_activity_empty, null)
 
         loadingView = View.inflate(MyApplication.context, R.layout.library_base_fragment_loading, null)
         val sdvLoading = loadingView!!.findViewById<View>(R.id.library_sdv_process) as SimpleDraweeView
@@ -88,7 +91,7 @@ abstract class BaseFragment : Fragment() {
         frameLayout!!.addView(loadingView)
 
         errorView = View.inflate(MyApplication.context, R.layout.library_base_fragment_error, null)
-        val retry = errorView!!.findViewById<View>(R.id.library_container_refresh) as LinearLayout
+        val retry = errorView!!.findViewById<View>(R.id.library_container_main) as RelativeLayout
         retry.setOnClickListener {
             errorViewOnClick()
             setLoadingViewVisible()
@@ -117,15 +120,17 @@ abstract class BaseFragment : Fragment() {
         frameLayout!!.addView(loadingView)
     }
 
-    @JvmOverloads protected fun replaceSuccessView(inflater: LayoutInflater? = null, container: ViewGroup? = null,
-                                                   savedInstanceState: Bundle? = null) {
+    @JvmOverloads
+    protected fun replaceSuccessView(inflater: LayoutInflater? = null, container: ViewGroup? = null,
+                                     savedInstanceState: Bundle? = null) {
         successView = initView(inflater, container, savedInstanceState)
         frameLayout!!.removeAllViews()
         frameLayout!!.addView(successView)
     }
 
-    @JvmOverloads protected fun setSuccessViewVisible(inflater: LayoutInflater? = null, container: ViewGroup? = null,
-                                                      savedInstanceState: Bundle? = null) {
+    @JvmOverloads
+    protected fun setSuccessViewVisible(inflater: LayoutInflater? = null, container: ViewGroup? = null,
+                                        savedInstanceState: Bundle? = null) {
         if (successView == null) {
             successView = initView(inflater, container, savedInstanceState)
         }

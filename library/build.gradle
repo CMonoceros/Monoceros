@@ -26,16 +26,21 @@ android {
 
     sourceSets {
         main {
-            java.srcDirs 'src/main/java/'
-            println '==========================================================='
-            println isComponent.toBoolean()
-            println java.srcDirs
+            java.srcDirs = ['src/main/java/']
             if (isComponent.toBoolean()) {
                 java.srcDirs += "src/debug/java/"
             } else {
                 java.srcDirs += "src/release/java/"
             }
-            println java.srcDirs
+        }
+
+        debug {
+            java.srcDirs = ['src/main/java/']
+            if (isComponent.toBoolean()) {
+                java.srcDirs += "src/debug/java/"
+            } else {
+                java.srcDirs += "src/release/java/"
+            }
         }
     }
 

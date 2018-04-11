@@ -87,6 +87,7 @@ android {
 
     sourceSets {
         debug {
+            java.srcDirs = ['src/main/java/']
             manifest.srcFile 'src/main/AndroidManifest.xml'
             if (isComponent.toBoolean()) {
                 java.srcDirs += "src/debug/java/"
@@ -96,6 +97,7 @@ android {
         }
 
         release {
+            java.srcDirs = ['src/main/java/']
             manifest.srcFile 'src/main/AndroidManifest.xml'
             if (isComponent.toBoolean()) {
                 java.srcDirs += "src/debug/java/"

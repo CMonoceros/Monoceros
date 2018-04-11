@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Monoceros.iml" filepath="$PROJECT_DIR$/Monoceros.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/news/news.iml" filepath="$PROJECT_DIR$/news/news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movies/movies.iml" filepath="$PROJECT_DIR$/movies/movies.iml" />
     </modules>
   </component>
 </project>

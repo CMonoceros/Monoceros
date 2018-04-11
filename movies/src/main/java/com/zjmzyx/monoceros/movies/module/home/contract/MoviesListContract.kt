@@ -1,4 +1,4 @@
-package com.zjmzyx.monoceros.module.home.contract
+package com.zjmzyx.monoceros.movies.module.home.contract
 
 import com.zjmzyx.monoceros.library.base.presenter.BasePresenter
 import com.zjmzyx.monoceros.library.base.ui.BaseView

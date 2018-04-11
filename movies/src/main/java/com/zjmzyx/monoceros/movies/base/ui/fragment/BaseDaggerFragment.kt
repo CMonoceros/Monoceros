@@ -1,13 +1,15 @@
-package com.zjmzyx.monoceros.library.base.ui.fragment
+package com.zjmzyx.monoceros.movies.base.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.zjmzyx.monoceros.base.inject.component.FragmentComponent
-import com.zjmzyx.monoceros.base.inject.module.FragmentModule
 
 import com.zjmzyx.monoceros.library.base.MyApplication
+import com.zjmzyx.monoceros.library.base.ui.fragment.BaseFragment
+import com.zjmzyx.monoceros.movies.base.inject.component.DaggerFragmentComponent
+import com.zjmzyx.monoceros.movies.base.inject.component.FragmentComponent
+import com.zjmzyx.monoceros.movies.base.inject.module.FragmentModule
 
 /**
  *

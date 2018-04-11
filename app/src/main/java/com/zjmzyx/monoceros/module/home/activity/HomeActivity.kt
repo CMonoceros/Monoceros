@@ -10,7 +10,7 @@ import com.zjmzyx.monoceros.R
 import com.zjmzyx.monoceros.databinding.HomeActivityBinding
 import com.zjmzyx.monoceros.library.base.ui.activity.BaseActivity
 import com.zjmzyx.monoceros.module.home.adapter.HomeFragmentPagerAdapter
-import com.zjmzyx.monoceros.module.home.fragment.MoviesListFragment
+import com.zjmzyx.monoceros.movies.module.home.fragment.MoviesListFragment
 
 /**
  *

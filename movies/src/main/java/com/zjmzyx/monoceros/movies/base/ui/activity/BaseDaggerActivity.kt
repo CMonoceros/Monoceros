@@ -1,11 +1,13 @@
-package com.zjmzyx.monoceros.library.base.ui.activity
+package com.zjmzyx.monoceros.movies.base.ui.activity
 
 
 import android.os.Bundle
-import com.zjmzyx.monoceros.base.inject.component.ActivityComponent
-import com.zjmzyx.monoceros.base.inject.module.ActivityModule
 
 import com.zjmzyx.monoceros.library.base.MyApplication
+import com.zjmzyx.monoceros.library.base.ui.activity.BaseActivity
+import com.zjmzyx.monoceros.movies.base.inject.component.ActivityComponent
+import com.zjmzyx.monoceros.movies.base.inject.component.DaggerActivityComponent
+import com.zjmzyx.monoceros.movies.base.inject.module.ActivityModule
 
 /**
  *
